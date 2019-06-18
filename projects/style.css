@@ -1,0 +1,22 @@
+h1{
+    transform: skewX(186deg);
+    text-align: center;
+    margin-top: 0%;
+    font-size: 250%;
+}
+body{
+    background-color: aliceblue
+}
+h3{
+    transform: skewX(184deg);
+    text-align: center;
+    margin-bottom: 3px;
+    font-size: 100%;
+    margin-top: 25px; 
+    color: midnightblue
+}
+p{
+    text-justify: auto;
+    text-align: center;
+    color: darkslateblue;
+}
