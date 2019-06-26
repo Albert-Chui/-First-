@@ -1,36 +1,106 @@
 <html>
+    <title>Albert's Guessing Game</title>
    <body>
 
    </body>
 <script>
 // Create a variable that holds the RANDOM number between 1-20
+let random= 12 //Math.floor(Math.random() * 20)+1;
 
 // Part 2: Create variable that holds the number of turns
+let turn= 8;
 
 // Create a variable for your "hint to the user" Ex: Guess my number between 1-20
+let hint= 'Guess my number between 1-20!' 
 
 // when is true != true?  What should our condition actually be?
+let turns = 8;
 
-while (true == true) {
+while (turns > 0) {
 
 // Use the prompt method to ask the user for input. Use this to also display the "hint to the user"
 // Part 2: Also display how many tries the user has left
 
-var guess = prompt(PUT YOUR HINT VARIABLE HERE);
+var guess = prompt(hint + 'You\'ve got' + turns + 'guesses left' );
 
+var tryguess = parseFloat(guess);
+
+var guesstry = Number(guess);
 // Convert the users guess to a number
-
+var userGuess= parseInt(guess, 10);
 // Use an if statement to see if the player's guess is equal to the random one generated
-
+if (userGuess === random) {
+    if (Number.isInteger(tryguess))
+{hint= 'You guessed correctly! Hooray.' 
+turns = turns - 13 }
+    else {
+        hint= 'Try again with an integer. You are very close to my number!'
+        turns = turns - 1
+}
+    }
+else if (userGuess === random ||userGuess === random+1 || userGuess === random-1)
+{
+    if (Number.isInteger(tryguess))
+    {hint=  'You are very close to my number!'
+    turns = turns - 1}
+    else {hint= 'Try again with an integer. You are very close to my number!'
+    turns = turns - 1}
+}
 
 // Use an else statement to notify the user if they guessed incorrectly
+else if (userGuess>20) {hint='You guessed too big!' + ' Please guess a number >= 20 but >= 1.'
+turns = turns - 1 }
+else if (userGuess<1)  {hint='Your number is too small.' + ' Please guess a number >=1 but <= 20'
+turns = turns - 1}
+
+else if (userGuess>random) {
+    hint= 'You are wrong.'+ ' You guessed too big!'
+    turns = turns - 1
+}
+else if (userGuess<random) {
+    hint= 'You are wrong.'+ ' Try something bigger!'
+    turns = turns - 1
+}
+else if (guess === 'between 1 and 20'|| guess=== 'and'|| guess=== 'between'|| guess=== 'number'|| guess=== 'Number'|| guess=== 'my number'|| guess=== 'Guess'|| guess=== 'guess'|| guess=== 'something bigger'|| guess=== 'a number please'|| guess=== 'correctly'|| guess=== 'Why') {
+    hint= 'Wow you are soooo smart. You\'re wrong though.'
+    turns = turns - 1}
+else if (guess === 'Albert' || guess === 'Albert Chui'){
+    hint = 'Thank you. You\'re real fun mate.'
+    turns = turns - 1
+}
+else if (guess === ' '|| guess === 'tree') {
+    hint= 'Guess a number please'
+    turns = turns - 1
+} 
+
+else if (guess === 'pizza' || guess === 'Pizza'|| guess === 'PIZZA'){
+    hint= 'You win. Congrats.'
+    turns = turns - 20
+}
+
+else if (guess === 'true'|| guess === 'false')   {
+    hint = 'That\'s not it, mate. Try guessing a number.'
+    turns = turns - 1
+}
+else if (guess === null || guess === undefined ){
+    hint= 'Why did you stop playing? What are you even trying to do?'
+    turns = turns + 3
+} 
+else if (guesstry === NaN){
+    hint= 'That\'s not right.' + ' Please guess a NUMBER between 1 and 20'
+    turns = turns - 1
+}
+else {
+    hint= 'That\'s not right.' + ' Please guess a NUMBER between 1 and 20'
+    turns = turns - 1
+}
 
 // Part 2: Inside the else statement, tell the player whether their guess is too small or too big, Hint: you'll need to use an if statement
 
 }
 
 // Part 2: If the user runs out of guesses, tell them what the correct number is.  Hint: What variable did we use to define it?
-
+alert('The secret number was ' + random + '.' )
 
    </script>
-</html>`
+<html>'
