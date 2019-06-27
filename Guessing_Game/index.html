@@ -21,7 +21,7 @@ while (turns > 0) {
 // Use the prompt method to ask the user for input. Use this to also display the "hint to the user"
 // Part 2: Also display how many tries the user has left
 
-var guess = prompt(hint + 'You\'ve got' + turns + 'guesses left' );
+var guess = prompt(hint + 'You\'ve got ' + turns + ' guesses left' );
 
 var tryguess = parseFloat(guess);
 
@@ -32,7 +32,7 @@ var userGuess= parseInt(guess, 10);
 if (userGuess === random) {
     if (Number.isInteger(tryguess))
 {hint= 'You guessed correctly! Hooray.' 
-turns = turns - 13 }
+turns = 0 }
     else {
         hint= 'Try again with an integer. You are very close to my number!'
         turns = turns - 1
@@ -63,7 +63,7 @@ else if (userGuess<random) {
 }
 else if (guess === 'between 1 and 20'|| guess=== 'and'|| guess=== 'between'|| guess=== 'number'|| guess=== 'Number'|| guess=== 'my number'|| guess=== 'Guess'|| guess=== 'guess'|| guess=== 'something bigger'|| guess=== 'a number please'|| guess=== 'correctly'|| guess=== 'Why') {
     hint= 'Wow you are soooo smart. You\'re wrong though.'
-    turns = turns - 1}
+    turns = turns + 0.1 }
 else if (guess === 'Albert' || guess === 'Albert Chui'){
     hint = 'Thank you. You\'re real fun mate.'
     turns = turns - 1
