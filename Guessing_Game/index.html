@@ -11,7 +11,7 @@ let random= 12 //Math.floor(Math.random() * 20)+1;
 let turn= 8;
 
 // Create a variable for your "hint to the user" Ex: Guess my number between 1-20
-let hint= 'Guess my number between 1-20!' 
+let hint= 'Guess my number. It\'s between 1-20!' 
 
 // when is true != true?  What should our condition actually be?
 let turns = 8;
@@ -75,7 +75,7 @@ else if (guess === ' '|| guess === 'tree') {
 
 else if (guess === 'pizza' || guess === 'Pizza'|| guess === 'PIZZA'){
     hint= 'You win. Congrats.'
-    turns = turns - 20
+    turns = 0.1
 }
 
 else if (guess === 'true'|| guess === 'false')   {
